@@ -65,7 +65,122 @@ A.A variable is a container for a value,like a number we might use in a sum,
       3.This block scope will not allow to access before initializing the value there.
 
       Temporal deadzone:
-        
+        1.Temporarl deadzone is the time between the let getting hoisted and it getting 
+          initialized.
+        2.whenver we try to access a variable inside a temporal dead zone it
+          gives an reference error.
+
+  2.let and const:
+    let a;
+    a=10;
+    a=50; 
+    let allows us to declare and reinitialize afterwards.
+    const c=100;
+    const cannot be reassigned
+
+3.difference between refernce,syntax and type error?
+A.reference error:
+    the reference to theobject is not in the scope.
+  syntax error:
+     if the syntax is not followed like reassigning for const and all.
+  type error:
+     when we are using the type of one like using const for let characteristics.
+
+4.what are the differen datatypes in js?
+A.There are two types of data types in js.
+  1.primitive
+  2.non primitive
+
+  1.primitive:
+     They are:
+        1.number type
+        2.boolean type
+        3.undefined type
+        4.null type
+        5.bigint type
+        6.string type
+        7.symbol type
+  2.non-primitive:
+        1.object
+
+    1.number type:
+       In Js, number type represents numeric data.Integers and floating point numbers
+       are present in number type.Js represents all numbers as floating point va.lues internally even integers.
+    
+    2.undefined type:
+       In JavaScript, undefined is a primitive data type that represents the 
+       absence of a value or the uninitialized state of a variable. When a variable is 
+       declared but not assigned a value, it is automatically assigned the value 
+       undefined.
+
+       In JavaScript, undefined is a primitive data type that represents the absence of a value or the 
+       uninitialized state of a variable. When a variable is declared but not assigned a value, 
+       it is automatically assigned the value undefined.
+
+   3.null type:
+       In JavaScript, null is also a primitive data type, like undefined, but it is used to 
+       represent the intentional absence of any object value. It's often used to explicitly 
+       indicate that a variable or object property does not have a value or does not point 
+       to any object.
+
+       This might seem surprising, but it's actually a quirk in JavaScript. Despite null being 
+       a primitive type, typeof null returns "object". This is a long-standing behavior in JavaScript 
+       that cannot be changed for backward compatibility reasons.
+       
+       console.log(null === undefined); // Output: false
+       console.log(null == undefined);  // Output: true
+  
+  4.bigint type:
+      The bigint type in JavaScript is a relatively recent addition, introduced in ECMAScript 2020 (ES11). 
+      It's used to represent integers of arbitrary length, allowing you to work with numbers larger than what 
+      can be represented with the number type.
+
+      BigInts are created by appending n to the end of an integer literal or by calling the BigInt() function 
+      with a numeric or string argument.
+
+      BigInts can be used just like regular numbers for arithmetic operations, but they cannot be mixed with regular 
+      numbers in the same operation. You need to explicitly convert between number and bigint when necessary.
+
+      const bigIntNum = 1234567890123456789012345678901234567890n;
+      console.log(bigIntNum); // Output: 1234567890123456789012345678901234567890n
+
+  5.symbol type:
+      The Symbol type in JavaScript was introduced in ECMAScript 2015 (ES6). It's a 
+      primitive data type and is often used to create unique identifiers, or keys, for 
+      object properties.
+
+      Symbols are created using the Symbol() function, which returns a unique symbol 
+      value each time it's called. Symbol values are immutable and unique, meaning that each 
+      symbol value returned by Symbol() is different from every other symbol value.
+
+      One common use case for symbols is to create unique keys for object properties, especially when you want 
+      to avoid naming conflicts or unintended modification of built-in properties.
+
+      Symbols are often used in conjunction with built-in JavaScript features, such as iterators, well-known symbols,
+      and metaprogramming.
+
+      One notable feature is that symbols are not enumerable in for...in loops or when using Object.keys(). This makes 
+      them useful for defining metadata or internal properties that are hidden from external code.
+  
+  2.Nonprimitive:
+     1.Objects comes under this data type and there are 
+        1.plain Objects
+        2.arrays
+        3.functions
+
+       1.objects:
+          Plain objects are the most common type of objects in JavaScript. They are created using object 
+          literals {} or the Object() constructor.
+
+          const person = {
+             name: 'John',
+             age: 30,
+             city: 'New York'
+             };
+
+      
+      
+
 
 
        
