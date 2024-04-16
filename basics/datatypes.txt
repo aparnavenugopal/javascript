@@ -1,0 +1,72 @@
+1.what is javascript?
+A.Javscript is a lightweight interpreted programming language with firstclass functions.
+  It is a prototype based , multi-paradigm,single-threaded,dynamic language
+  supporting both object oriented,imperative and declarative styles.
+
+2.what is a variable?
+A.A variable is a container for a value,like a number we might use in a sum,
+  or a string that we might use as apart of a sentence.
+  We can declare a variable in js with the help of 3 things.
+  1.variable
+  2.let 
+  3.const
+
+  1.var:
+     var was initially used in js to decalre variables but it has few disadvantages as it is
+     globalscoped and encourages hoisting.lets deep dive into global scope and hoisting.
+
+     a.hositing:
+       1.Hoidting in var:
+        Hoisting is a phenomenon in javascript where we can access the variables and functions even
+        before we initialized and put some valiue in it without any error.
+
+        getName();
+        console.log(x);
+
+        console.log(getName);
+
+        var x=7;
+
+        function getName(){
+          console.log('namaste javascript');
+        }
+
+        console.log('x is:',x);
+        // console.log(getName);
+
+        output:
+        namaste javascript
+        undefined
+        getName function
+
+        1.var is globalscoped and in the phase 1 of memory allocation js just skims 
+          tgrough the program and allocates memory and puts a placeholder undefined.
+        2.In case of functions the whole function copy put in.
+        3.Now when we try to do the same that is accessing it even before initializinf
+          for let and const we get an error as they are block scoped.
+        4.Even instead of normal functions if we use arrow functions hoisting
+          cant take place as js treats them as variables .
+        5.There is a differencve between un defined and not defined which is undefined means
+          there is a variabled decalred ithas novalue and not defined means there is no variable declaration and hence
+          reference error.
+    
+    2.Hoisting in let and const:
+      1.let and const declarationa are hoisted and its different from var declaration.
+      
+
+      console.log(b);
+      console.log(a);
+      console.log(b);
+      let a=10;
+      var b=100;
+      
+      2.here the var is allocated memory in the global ie, window scope
+        where as let is allocated memory in the Script part block scoped.
+      3.This block scope will not allow to access before initializing the value there.
+
+      Temporal deadzone:
+        
+
+
+       
+  
