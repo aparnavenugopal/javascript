@@ -1,0 +1,67 @@
+1.what are pure functions?
+A.1.Given the same input, always returns the same output.
+  2.Has no side effects. That is, it does not modify external state or interact with the outside world 
+  in any way.
+
+  Characteristics:
+    1.Deterministic: Pure functions produce the same output for the same input every time 
+                     they are called.
+    2.No Side Effects: Pure functions do not modify external state or variables, and they do 
+                       not perform I/O operations such as reading from files or making network requests.
+
+2.What are impure functions?
+A.An impure function is a function that:
+   1.Does not always return the same output for the same input.
+   2.May have side effects. It can modify external state or interact with the outside 
+     world.
+
+   Characteristics:
+      1.Non-Deterministic: Impure functions may produce different output for the same input, depending on 
+                           the external state.
+      2.Side Effects: Impure functions may modify external state or perform I/O operations, making them 
+                      less predictable and harder to reason about.
+
+3.what does js support call by value or call by reference?
+A.JavaScript primarily supports call by value, but it's important to understand how it works in the context of 
+  primitive values and reference values.
+   
+   1.Call by value:
+       When you pass a primitive value (e.g., number, string, boolean) to a function, JavaScript passes a copy of 
+       the value to the function. Any changes made to the parameter inside the function do not affect the original 
+       value outside the function.
+       JavaScript passes the value itself, not a reference to the value. 
+   
+   2.Call by reference:
+       When you pass an object (including arrays and functions) to a function, JavaScript passes a copy of the reference to 
+       the object, not a copy of the object itself. This can sometimes be described as "call by reference" behavior, but it's 
+       more accurately called "passing by sharing" or "passing by object-sharing."
+       Changes made to the object's properties inside the function are reflected outside the function because both the original 
+       object and the parameter inside the function refer to the same object in memory.
+
+3.What is a shallow copy?
+A.Shallow copy:
+  1.In js, a shallow copy creates a new object and copies all the properties of the original object to the new object.
+  2.However, if any of the properties of the original object are objects themselves(ie.nested objects), then  the references
+    to those objects are copied not the actual objects.
+  3.This means that changes to the nested objects in the original object will also reflect in the shallow copy and vice versa.
+  4.There are several ways to perform shallow copy:
+     1.In objects:
+         1.Object.assign
+         2.spread operator
+     2.In arrays:
+         1.slice()
+         2.concat()
+         3.spread operator
+
+4.What is a deep copy?
+A.Deep copying an object creates a completely new object with all of its properties and nested properties copied recursively. 
+  This means that changes made to the copied object or its nested properties do not affect the original object.
+  There are several ways to perform deep copy:
+    1.Using JSON.parse() and JSON.Stringify():
+        This method involves converting the object to a JSON string using JSON.Stringify() and parsing the JSON string back into
+        a new object using JSON.parse().
+        This method works well for objects with simple data types, but it may lose certain types of data(such as functions or 'undefined).
+        Does not work with dates,infinity,regex,maps,sets.
+    2.using 3 party libraries like lodash or jquery
+    3.Using custom recursive function
+        
