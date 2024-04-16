@@ -177,6 +177,71 @@ A.There are two types of data types in js.
              age: 30,
              city: 'New York'
              };
+        
+          
+          we can access data in objects either by dot or bracket notation.
+
+          console.log(person.name); // Output: "John"
+          console.log(person.age);  // Output: 30
+
+          const propertyName = 'name';
+          console.log(person[propertyName]); // Output: "John"
+
+          Iterating through objects:
+            Iterating through objects can be done by 
+              a.for in:
+                for (const key in person) {
+                console.log(key + ': ' + person[key]);
+                }
+              
+              b.Object.keys():
+                 The Object.keys() method returns an array containing the enumerable property names of an 
+                 object.
+
+                 const keys = Object.keys(person);
+                 keys.forEach(key => {
+                 console.log(key + ': ' + person[key]);
+                 });
+
+              c.Object.values():
+                  The Object.values() method returns an array containing the enumerable property values of an 
+                  object.
+                 
+                 const values = Object.values(person);
+                 values.forEach(value => {
+                 console.log(value);
+                  });
+
+              d.Object.entries():
+                   The Object.entries() method returns an array containing the enumerable property [key, value] pairs of an 
+                   object.
+
+              const entries = Object.entries(person);
+              entries.forEach(([key, value]) => {
+              console.log(key + ': ' + value);
+               });
+
+              However, keep in mind that for...in loop includes inherited properties from the prototype chain, 
+              while the other methods only iterate over an object's own enumerable properties.
+
+            3. built-in methods for objects:
+                   a.Object.assign()-->does shallow copy
+                   b.Object.keys()
+                   c.Object.values()
+                   d.Object.entries()
+                   e.Object.freeze():
+                       Object.freeze() method freezes an object, preventing new properties from being added to it, 
+                       existing properties from being removed, and its prototype from being changed. It returns the 
+                       passed object.
+                       Cannot do deep copyie, in nested properties it does make the channges to the original object.
+                   d.Object.seal():
+                       Object.seal() method seals an object, preventing new properties from being added to it and marking 
+                       all existing properties as non-configurable. It returns the passed object.
+                   e.Object.getOwnPropertyDescriptors():
+                       Object.getOwnPropertyDescriptors() method returns all own property descriptors of a given object.
+
+                
+
 
       
       
