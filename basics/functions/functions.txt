@@ -1,0 +1,52 @@
+1.What are higher order functions?
+A.Higher-order functions are functions that can take other functions as arguments or return functions as results. 
+  In JavaScript, functions are treated as first-class citizens, meaning they can be assigned to variables, passed as 
+  arguments to other functions, and returned from functions. This enables powerful functional programming paradigms and 
+  allows for more expressive and concise code.
+
+  Characteristics of higher order functions:
+   1.accepting functions as arguments
+   2.returning functions as results.
+
+  Benefits of higher order functions:
+    1.Abstraction: Higher-order functions promote code reuse and abstraction by separating concerns. They allow you to abstract 
+                   common patterns and behaviors into reusable functions.
+    2.Flexibility: Higher-order functions enable writing more flexible and customizable code. By passing functions as arguments, 
+                   you can change the behavior of a function dynamically.
+    3.Expressiveness: Higher-order functions lead to more expressive and concise code by promoting functional programming paradigms 
+                      such as map, filter, and reduce.
+
+2.Why are functions called first class citizens in js?
+A.Functions are called first-class citizens in JavaScript because they possess the same characteristics and capabilities as other data types, 
+  such as strings, numbers, and objects. Specifically, functions in JavaScript can be treated in the same way as any other value:
+    1.Assigned to variables
+    2.passed as arguments
+    3.returned from functions
+    4.stored in data structures
+       const functionsArray = [function() { return 'Hello'; }, function() { return 'World'; }];
+
+    5.created dynamically
+      const sayHello = new Function('return "Hello";');
+
+3.What are callback functions in js?
+A.
+In JavaScript, a callback function is a function that is passed as an argument to another function and is executed after the completion of a 
+   specific task or at a certain event. Callback functions are a fundamental concept in asynchronous programming, allowing for non-blocking 
+   operations and enabling more flexible and modular code.
+
+   Characteristics of callback functions:
+   1.Passed as Arguments: Callback functions are passed as arguments to other functions, typically functions that perform asynchronous operations 
+                          or operations that depend on external events.
+   2.Executed Later: The callback function is executed later, after the completion of the task or event that it is associated with. This allows 
+                     for handling the result of the task or responding to the event asynchronously.
+
+    Benefits of callback function:
+    1.Asynchronous Programming: Callback functions are essential for handling asynchronous operations such as fetching data from servers, r
+                                reading files, or handling user input events without blocking the main thread.
+    2.Modular and Reusable Code: Callback functions promote modular and reusable code by allowing you to separate concerns and encapsulate 
+                                 functionality in separate functions.
+    3.Flexibility: Callback functions provide flexibility by allowing you to define custom behavior that should occur after the completion 
+                   of a task or at an event.
+   
+4.what is callback hell or pyramid of doom?
+A.
