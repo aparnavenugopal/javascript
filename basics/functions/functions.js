@@ -138,7 +138,7 @@ function greet(language) {
 
 setTimeout(function(){
    console.log('timer');
-},5000);
+},1000);
 
 function x(y){
     console.log('x');
@@ -162,6 +162,30 @@ function fetchData(url, callback) {
   }
   
   fetchData('https://example.com/api/data', processData);
+
+  //callbackhell
+
+  console.log("namaste");
+
+  setTimeout(function(){
+    console.log('javascript');
+  },1000);
+
+  console.log('season2');
+
+  const cart = ['shoes','pants','kurta']; 
+
+  // api.createOrder(cart, function(){
+  //   api.proceedToPayment(function(){
+  //       api.showOrderSummary(function(){
+  //         api.updateWallet()
+  //       })
+  //   })
+  // })
+
+  //the above code is called callbackhell
+
+  
   
 
 
