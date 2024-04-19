@@ -185,9 +185,71 @@ function fetchData(url, callback) {
 
   //the above code is called callbackhell
 
-  
-  
+  //promises
 
+ //promise creation
+
+const promiseOne = new Promise((resolve,reject) => {
+  setTimeout(() => {
+    console.log('async task is complete');
+    resolve();
+  },1000);
+}) ;
+
+//promise consumption
+
+promiseOne.then(function(){
+  console.log('promise is consumed');
+});
+
+//other way to create promise
+
+new Promise(function(resolve,reject) {
+  setTimeout(function(){
+    console.log('async task2');
+    resolve();
+  },1000);
+}).then(function(){
+  console.log('async2 resolved');
+})
+
+const promiseThree = new Promise((resolve,reject) => {
+  setTimeout(() =>{
+      resolve({
+        username: 'chai',
+        email: 'chai@example.com',
+      })
+  },1000);
+})
+
+promiseThree.then((user) => {
+   console.log(user);
+})
+
+const promiseFour = new Promise((resolve,reject) => {
+  setTimeout(() => {
+     let error=false;
+     if(!error){
+      resolve({
+        username:'krishna',
+        password:'123',
+      })
+     }else{
+      reject('error:something went wrong')
+    }
+  },1000);
+})
+
+promiseFour.then((user) => {
+   console.log(user);
+   return user.username; //this will be returned by another .then
+}).then((username) => {
+  console.log(username);
+}).catch((error) => {
+  console.log(error);
+}).finally(() => { //this will execute even it is resolve or reject
+  console.log('done');
+})
 
 
 

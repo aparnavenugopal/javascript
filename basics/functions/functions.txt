@@ -49,4 +49,29 @@ In JavaScript, a callback function is a function that is passed as an argument t
                    of a task or at an event.
    
 4.what is callback hell or pyramid of doom?
-A.
+A.Callback hell, also known as the pyramid of doom, is a situation that arises in JavaScript code when multiple nested callback functions 
+  are used to handle asynchronous operations. This nesting of callbacks occurs when asynchronous tasks depend on the results of other 
+  asynchronous tasks, leading to deeply nested and unreadable code structures.Here the control directly goes to the callbacks instead
+  of developer making it unmaintainable unmanageble and unreadable code.
+
+  Mitigation strategies:
+   1.Named Functions: Define named functions for callback functions to improve readability and modularity.
+   2.Modularization: Break down complex operations into smaller, modular functions to reduce nesting and improve code organization.
+   3.Promises: Use promises to handle asynchronous operations in a more structured and readable manner. Promises allow for chaining o
+               perations and handling errors more elegantly.
+   4.Async/Await: Use async/await syntax, which provides a more synchronous-looking way to write asynchronous code. Async/await builds 
+                  upon promises and helps eliminate callback hell by allowing you to write asynchronous code in a more linear and readable style.
+
+
+5.what are promises?
+A.The promise object represents the eventual completion or failure of an asynchronous operation and its resulting value.
+  It has 3 states:
+     a.pending: initial state, neither fulfilled nor rejected.
+     b.fulfilled: meaning that the operation was completed succesfully
+     c.rejected: meaning that the operation was failed.
+  
+  It has 2 phases :
+     1.creation
+     2.consumption
+  
+  
