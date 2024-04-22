@@ -325,6 +325,91 @@ Promise.all(promises)
     });
   
 
+//promise.allsettled
+const promises2 = [
+  Promise.resolve('Resolved Promise'),
+  Promise.reject(new Error('Rejected Promise')),
+  new Promise(resolve => setTimeout(() => resolve('Resolved Promise after timeout'), 2000))
+];
+
+Promise.allSettled(promises2)
+  .then(results => {
+    console.log('All promises settled:', results);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+
+  //async await
+
+  const p = new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve('promise resolved value!')
+    },10000);
+  })
+
+  const p1 = new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve('done for the day');
+    },5000);
+  })
+
+  const p2 = new Promise((resolve,reject) => {
+    setTimeout(() => {
+      resolve('promise resolved value!')
+    },5000);
+  })
+
+  // async function getData(){
+  //   return p;
+  // }
+
+  // const data = getData();
+  
+  // data.then(res => console.log(res));
+
+  function data(){
+     //js engine will not wait for promise to resolve hence it first
+     //prints  there you are
+     p.then(res => console.log(res));
+     console.log('there you are');
+  }
+
+  async function handlePromise(){
+    //js engine waits here hence hello how are you is not instantanously
+    //printed
+    console.log('am with you guys');
+    const val = await p2;
+    console.log(val);
+    console.log('hello how are you');
+    console.log(val);
+    const val2 =  await p;
+    console.log('will you wait 2 times');
+    console.log(val2);
+    console.log('happy being here');
+  }
+  handlePromise();
+
+  //example using async and await
+
+  const API_URL = "https://api.github.com/users/akshaymarch7";
+
+  //await can only be used inside a async function
+
+  const  handle = async () => {
+    try{
+      const data = await fetch(API_URL);
+      const jsonValue = await data.json();
+      return jsonValue;
+
+    }
+    catch(err){
+      console.log(err);
+    }
+  }
+
+  const w =handle();
+  console.log(w);
 
 
 
