@@ -251,6 +251,80 @@ promiseFour.then((user) => {
   console.log('done');
 })
 
+//promise.all
+
+function fetchDataFromEndpoint1() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Data from Endpoint 1');
+    }, 2000);
+  });
+}
+
+function fetchDataFromEndpoint2() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Data from Endpoint 2');
+    }, 1500);
+  });
+}
+
+function fetchDataFromEndpoint3() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Data from Endpoint 3');
+    }, 1000);
+  });
+}
+
+const promises = [
+  fetchDataFromEndpoint1(),
+  fetchDataFromEndpoint2(),
+  fetchDataFromEndpoint3()
+];
+
+Promise.all(promises)
+  .then((results) => {
+    console.log('All data fetched successfully:', results);
+    // Process the fetched data here...
+  })
+  .catch((error) => {
+    console.error('Error fetching data:', error);
+  });
+
+  //promise.race
+
+  function fetchDataFromEndpoint1() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('Data from Endpoint 1');
+      }, 2000);
+    });
+  }
+  
+  function fetchDataFromEndpoint2() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve('Data from Endpoint 2');
+      }, 1500);
+    });
+  }
+  
+  const promises1 = [
+    fetchDataFromEndpoint1(),
+    fetchDataFromEndpoint2()
+  ];
+  
+  Promise.race(promises1)
+    .then((result) => {
+      console.log('First data received:', result);
+      // Process the first received data here...
+    })
+    .catch((error) => {
+      console.error('Error fetching data:', error);
+    });
+  
+
 
 
 

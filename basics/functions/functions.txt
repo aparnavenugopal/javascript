@@ -65,6 +65,7 @@ A.Callback hell, also known as the pyramid of doom, is a situation that arises i
 
 5.what are promises?
 A.The promise object represents the eventual completion or failure of an asynchronous operation and its resulting value.
+  it is a placeholder for future value.
   It has 3 states:
      a.pending: initial state, neither fulfilled nor rejected.
      b.fulfilled: meaning that the operation was completed succesfully
