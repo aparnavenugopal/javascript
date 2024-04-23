@@ -124,4 +124,41 @@ let objr = {
 
 objr.print();
 
+console.log('namaste javascript example');
 
+const student = {
+    name: 'krishna',
+    x: function(){
+        console.log(this.name);
+    }
+}
+
+const student2 = {
+    name:'bujjulu',
+}
+
+
+student.x.call(student2);
+
+function greet() {
+    console.log(`Hello, ${this.name}!`);
+  }
+  
+  const person = { name: 'John' };
+  greet.call(person); // Output: Hello, John!
+
+
+  
+  const person1 = { name: 'John' };
+  const boundGreet = greet.bind(person1);
+  boundGreet(); // Output: Hello, John!
+  
+  const person2 = {
+    name: 'John',
+    greet: () => {
+      console.log(`Hello, ${this.name}!`);
+    }
+  };
+  
+  person2.greet(); // Output: Hello, undefined!
+  
