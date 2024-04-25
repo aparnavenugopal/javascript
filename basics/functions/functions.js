@@ -411,5 +411,3 @@ Promise.allSettled(promises2)
   const w =handle();
   console.log(w);
 
-
-
