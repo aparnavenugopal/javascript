@@ -35,3 +35,6 @@ const findMatchingObject = (obj, [key, value]) => {
 }
 
 console.log(findMatchingObject(obj, ['z', 'z1'])); 
+
+//closures
+
