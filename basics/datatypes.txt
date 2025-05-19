@@ -1,0 +1,252 @@
+1.what is javascript?
+A.Javscript is a lightweight interpreted programming language with firstclass functions.
+  It is a prototype based , multi-paradigm,single-threaded,dynamic language
+  supporting both object oriented,imperative and declarative styles.
+
+2.what is a variable?
+A.A variable is a container for a value,like a number we might use in a sum,
+  or a string that we might use as apart of a sentence.
+  We can declare a variable in js with the help of 3 things.
+  1.variable
+  2.let 
+  3.const
+
+  1.var:
+     var was initially used in js to decalre variables but it has few disadvantages as it is
+     globalscoped and encourages hoisting.lets deep dive into global scope and hoisting.
+
+     a.hositing:
+       1.Hoidting in var:
+        Hoisting is a phenomenon in javascript where we can access the variables and functions even
+        before we initialized and put some valiue in it without any error.
+
+        getName();
+        console.log(x);
+
+        console.log(getName);
+
+        var x=7;
+
+        function getName(){
+          console.log('namaste javascript');
+        }
+
+        console.log('x is:',x);
+        // console.log(getName);
+
+        output:
+        namaste javascript
+        undefined
+        getName function
+
+        1.var is globalscoped and in the phase 1 of memory allocation js just skims 
+          tgrough the program and allocates memory and puts a placeholder undefined.
+        2.In case of functions the whole function copy put in.
+        3.Now when we try to do the same that is accessing it even before initializinf
+          for let and const we get an error as they are block scoped.
+        4.Even instead of normal functions if we use arrow functions hoisting
+          cant take place as js treats them as variables .
+        5.There is a differencve between un defined and not defined which is undefined means
+          there is a variabled decalred ithas novalue and not defined means there is no variable declaration and hence
+          reference error.
+    
+    2.Hoisting in let and const:
+      1.let and const declarationa are hoisted and its different from var declaration.
+      
+
+      console.log(b);
+      console.log(a);
+      console.log(b);
+      let a=10;
+      var b=100;
+      
+      2.here the var is allocated memory in the global ie, window scope
+        where as let is allocated memory in the Script part block scoped.
+      3.This block scope will not allow to access before initializing the value there.
+
+      Temporal deadzone:
+        1.Temporarl deadzone is the time between the let getting hoisted and it getting 
+          initialized.
+        2.whenver we try to access a variable inside a temporal dead zone it
+          gives an reference error.
+
+  2.let and const:
+    let a;
+    a=10;
+    a=50; 
+    let allows us to declare and reinitialize afterwards.
+    const c=100;
+    const cannot be reassigned
+
+3.difference between refernce,syntax and type error?
+A.reference error:
+    the reference to theobject is not in the scope.
+  syntax error:
+     if the syntax is not followed like reassigning for const and all.
+  type error:
+     when we are using the type of one like using const for let characteristics.
+
+4.what are the differen datatypes in js?
+A.There are two types of data types in js.
+  1.primitive
+  2.non primitive
+
+  1.primitive:
+     They are:
+        1.number type
+        2.boolean type
+        3.undefined type
+        4.null type
+        5.bigint type
+        6.string type
+        7.symbol type
+  2.non-primitive:
+        1.object
+
+    1.number type:
+       In Js, number type represents numeric data.Integers and floating point numbers
+       are present in number type.Js represents all numbers as floating point va.lues internally even integers.
+    
+    2.undefined type:
+       In JavaScript, undefined is a primitive data type that represents the 
+       absence of a value or the uninitialized state of a variable. When a variable is 
+       declared but not assigned a value, it is automatically assigned the value 
+       undefined.
+
+       In JavaScript, undefined is a primitive data type that represents the absence of a value or the 
+       uninitialized state of a variable. When a variable is declared but not assigned a value, 
+       it is automatically assigned the value undefined.
+
+   3.null type:
+       In JavaScript, null is also a primitive data type, like undefined, but it is used to 
+       represent the intentional absence of any object value. It's often used to explicitly 
+       indicate that a variable or object property does not have a value or does not point 
+       to any object.
+
+       This might seem surprising, but it's actually a quirk in JavaScript. Despite null being 
+       a primitive type, typeof null returns "object". This is a long-standing behavior in JavaScript 
+       that cannot be changed for backward compatibility reasons.
+       
+       console.log(null === undefined); // Output: false
+       console.log(null == undefined);  // Output: true
+  
+  4.bigint type:
+      The bigint type in JavaScript is a relatively recent addition, introduced in ECMAScript 2020 (ES11). 
+      It's used to represent integers of arbitrary length, allowing you to work with numbers larger than what 
+      can be represented with the number type.
+
+      BigInts are created by appending n to the end of an integer literal or by calling the BigInt() function 
+      with a numeric or string argument.
+
+      BigInts can be used just like regular numbers for arithmetic operations, but they cannot be mixed with regular 
+      numbers in the same operation. You need to explicitly convert between number and bigint when necessary.
+
+      const bigIntNum = 1234567890123456789012345678901234567890n;
+      console.log(bigIntNum); // Output: 1234567890123456789012345678901234567890n
+
+  5.symbol type:
+      The Symbol type in JavaScript was introduced in ECMAScript 2015 (ES6). It's a 
+      primitive data type and is often used to create unique identifiers, or keys, for 
+      object properties.
+
+      Symbols are created using the Symbol() function, which returns a unique symbol 
+      value each time it's called. Symbol values are immutable and unique, meaning that each 
+      symbol value returned by Symbol() is different from every other symbol value.
+
+      One common use case for symbols is to create unique keys for object properties, especially when you want 
+      to avoid naming conflicts or unintended modification of built-in properties.
+
+      Symbols are often used in conjunction with built-in JavaScript features, such as iterators, well-known symbols,
+      and metaprogramming.
+
+      One notable feature is that symbols are not enumerable in for...in loops or when using Object.keys(). This makes 
+      them useful for defining metadata or internal properties that are hidden from external code.
+  
+  2.Nonprimitive:
+     1.Objects comes under this data type and there are 
+        1.plain Objects
+        2.arrays
+        3.functions
+
+       1.objects:
+          Plain objects are the most common type of objects in JavaScript. They are created using object 
+          literals {} or the Object() constructor.
+
+          const person = {
+             name: 'John',
+             age: 30,
+             city: 'New York'
+             };
+        
+          
+          we can access data in objects either by dot or bracket notation.
+
+          console.log(person.name); // Output: "John"
+          console.log(person.age);  // Output: 30
+
+          const propertyName = 'name';
+          console.log(person[propertyName]); // Output: "John"
+
+          Iterating through objects:
+            Iterating through objects can be done by 
+              a.for in:
+                for (const key in person) {
+                console.log(key + ': ' + person[key]);
+                }
+              
+              b.Object.keys():
+                 The Object.keys() method returns an array containing the enumerable property names of an 
+                 object.
+
+                 const keys = Object.keys(person);
+                 keys.forEach(key => {
+                 console.log(key + ': ' + person[key]);
+                 });
+
+              c.Object.values():
+                  The Object.values() method returns an array containing the enumerable property values of an 
+                  object.
+                 
+                 const values = Object.values(person);
+                 values.forEach(value => {
+                 console.log(value);
+                  });
+
+              d.Object.entries():
+                   The Object.entries() method returns an array containing the enumerable property [key, value] pairs of an 
+                   object.
+
+              const entries = Object.entries(person);
+              entries.forEach(([key, value]) => {
+              console.log(key + ': ' + value);
+               });
+
+              However, keep in mind that for...in loop includes inherited properties from the prototype chain, 
+              while the other methods only iterate over an object's own enumerable properties.
+
+            3. built-in methods for objects:
+                   a.Object.assign()-->does shallow copy
+                   b.Object.keys()
+                   c.Object.values()
+                   d.Object.entries()
+                   e.Object.freeze():
+                       Object.freeze() method freezes an object, preventing new properties from being added to it, 
+                       existing properties from being removed, and its prototype from being changed. It returns the 
+                       passed object.
+                       Cannot do deep copyie, in nested properties it does make the channges to the original object.
+                   d.Object.seal():
+                       Object.seal() method seals an object, preventing new properties from being added to it and marking 
+                       all existing properties as non-configurable. It returns the passed object.
+                   e.Object.getOwnPropertyDescriptors():
+                       Object.getOwnPropertyDescriptors() method returns all own property descriptors of a given object.
+
+                
+
+
+      
+      
+
+
+
+       
+  
